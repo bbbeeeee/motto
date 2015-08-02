@@ -71,7 +71,7 @@ var MottoForm = React.createClass({
   render: function() {
     return (
       <form className="motto-form" onSubmit={this.handleSubmit}>
-          <input type="text" placeholder="New motto" ref="motto" />
+          <input type="text" placeholder="I will follow my mottos." ref="motto" />
           <input type="submit" value="New motto" />
       </form>
     ); 
@@ -107,7 +107,7 @@ var MottoContainer = React.createClass({
 var data = getMottos();
 
 if(data === null) {
-  data = [];
+  data = [{motto: 'Make new mottos to replace these (max 3)'}];
   localStorage.setItem('mottos', JSON.stringify(data)); 
 }
 
