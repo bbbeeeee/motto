@@ -31,17 +31,12 @@ var Motto = React.createClass({
 
 var MottoList = React.createClass({
   render: function() {
-    console.log(getMottos());
     var mottoNodes = this.props.data.map(function(m, index) {
       return (
-        <Motto key={index} motto={m.motto}>
-          {m.motto}
-        </Motto>
+        <Motto key={index} motto={m.motto} />
       );
     });
     
-    console.log(this.props.data);
-    console.log(mottoNodes);
     return (
       <ul className="mottoList">
         {mottoNodes}  
@@ -85,7 +80,7 @@ var MottoContainer = React.createClass({
     });
   },
   getInitialState: function() {
-    return {data: []}; 
+    return {data: getMottos()}; 
   },
   componentDidMount: function() {
     this.loadMottos();
