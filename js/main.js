@@ -31,7 +31,10 @@ function getRandom(ar) {
 var Motto = React.createClass({
   render: function() {
     return (
-      <h3>{this.props.motto}</h3>
+      <div id="motto">
+        <div className="spacer"></div>
+        <h3>{this.props.motto}</h3>
+      </div>
     );
   }
 });
@@ -67,9 +70,9 @@ var MottoForm = React.createClass({
   },
   render: function() {
     return (
-      <form className="mottoForm" onSubmit={this.handleSubmit}>
+      <form className="motto-form" onSubmit={this.handleSubmit}>
           <input type="text" placeholder="New motto" ref="motto" />
-          <input type="submit" value="Post" />
+          <input type="submit" value="New motto" />
       </form>
     ); 
   }
@@ -93,7 +96,7 @@ var MottoContainer = React.createClass({
   },
   render: function() {
     return (
-      <div className="mottoContainer">
+      <div className="motto-container">
         <Motto motto={getRandom(this.state.data)} />
         <MottoForm onMottoSubmit={this.handleMottoSubmit} />    
       </div>
@@ -112,3 +115,4 @@ React.render(
   <MottoContainer data={data} />,
   document.getElementById('content')
 );
+

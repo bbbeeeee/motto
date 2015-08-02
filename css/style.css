@@ -1,0 +1,53 @@
+/* I know id css is bad but whatever */
+* {
+  margin: 0;
+  padding: 0;  
+}
+
+html, body, #content, .motto-container {
+  height: 100%;
+}
+
+#motto {
+  text-align: center; 
+  font-size: 5em;
+}
+
+#motto .spacer {
+  height:30px;
+}
+
+#motto {
+  min-height: 100%;
+  margin-bottom: -70px;
+  font-family: sans-serif;
+}
+
+#motto:after {
+  content: "";
+  display:block;
+}
+
+.motto-form, #motto:after {
+  height: 40px;
+}
+
+.motto-form {
+  text-align: center;  
+}
+
+input[type="text"] {
+  border: none;
+  width: 90%;
+  border-bottom: 1px solid black;
+  padding:10px;
+  font-size:2em;
+}
+
+input:focus {
+  outline: none;
+}
+
+input[type="submit"] {
+  display:none;
+}
