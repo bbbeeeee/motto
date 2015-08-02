@@ -94,7 +94,7 @@ var MottoContainer = React.createClass({
   render: function() {
     return (
       <div className="mottoContainer">
-        <MottoList data={this.state.data} />
+        <Motto motto={getRandom(this.state.data)} />
         <MottoForm onMottoSubmit={this.handleMottoSubmit} />    
       </div>
     ); 
