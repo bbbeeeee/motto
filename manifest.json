@@ -1,5 +1,5 @@
 {
-  "manifest_version": 1,
+  "manifest_version": 2,
   "name": "Motto",
   "description": "New tab to maintain your daily mottos and life goals",
   "version": "1.0",
