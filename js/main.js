@@ -1,8 +1,12 @@
+// LRU cache of mottos - up to 3 mottos you can have. New ones will overwrite old ones.
 function addMotto(text) {
   var current = getMottos();;
   if(current === null) current = [];
-  
+
   current.push({motto: text});
+  if(current.length > 3) {
+    current.splice(0, 1);
+  }
 
   localStorage.setItem('mottos',
                        JSON.stringify(current));
@@ -18,13 +22,16 @@ function getMottos() {
   return JSON.parse(localStorage.getItem('mottos'));
 }
 
+function getRandom(ar) {
+  var rand = Math.floor(Math.random() * ar.length);
+  return ar[rand];
+}
+
+// You can have up to 5 Mottos. LRU cache to erase old ones.
 var Motto = React.createClass({
   render: function() {
     return (
-      <li>
-          <h3>{this.props.motto}</h3>
-          <span>X</span>
-      </li>
+      <h3>{this.props.motto}</h3>
     );
   }
 });
@@ -33,7 +40,9 @@ var MottoList = React.createClass({
   render: function() {
     var mottoNodes = this.props.data.map(function(m, index) {
       return (
-        <Motto key={index} motto={m.motto} />
+        <li>
+          <Motto key={index} motto={m.motto} />
+        </li>
       );
     });
     
@@ -71,11 +80,8 @@ var MottoContainer = React.createClass({
     this.setState(getMottos()); 
   },
   handleMottoSubmit: function(motto) {
-    var mottos = this.state.data;
-    mottos.push(motto);
-    
     addMotto(motto);
-    this.setState({data: mottos}, function() {
+    this.setState({data: getMottos()}, function() {
       
     });
   },
