@@ -13,6 +13,11 @@ html, body, #content, .motto-container {
   font-size: 5em;
 }
 
+#motto h3 {
+  padding: 30px 0px;
+  text-align:center;
+}
+
 #motto .spacer {
   height:30px;
 }

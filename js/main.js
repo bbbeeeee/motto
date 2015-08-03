@@ -107,7 +107,7 @@ var MottoContainer = React.createClass({
 var data = getMottos();
 
 if(data === null) {
-  data = [{motto: 'Make new mottos to replace these (max 3)'}];
+  data = [];
   localStorage.setItem('mottos', JSON.stringify(data)); 
 }
 

@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Motto",
   "description": "New tab to maintain your daily mottos and life goals",
-  "version": "1.0",
+  "version": "0.1",
   "chrome_url_overrides": {
     "newtab": "motto.html"
   }
